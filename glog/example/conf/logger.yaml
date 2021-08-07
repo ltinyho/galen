@@ -1,0 +1,28 @@
+logger:
+  level: debug
+  reportcaller: true
+  formatter:
+    name: classic
+    opts:
+      forcecolors: false
+      truncateCallerPath: true
+      callerPathStrip: true
+  stdout:
+    enabled: true
+    level: info
+
+  file:
+    enabled: true
+    path: ./log/
+    name: message.log
+    level: trace
+    formatter:
+      name: json
+      opts: # default formatter opts
+        forcecolors: true
+        truncateCallerPath: true
+        callerPathStrip: true
+    rotate:
+      time: 100m
+      maxage: 5m
+      count: 0
